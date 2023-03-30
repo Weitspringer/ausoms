@@ -1,4 +1,4 @@
-# AuSoMS - Automatic Segmentation of the Mouse Skull (AuSoMS) in MR images  
+# AuSoMS - Automatic Segmentation of the Mouse Skull in MR images  
 <img src="https://github.com/Weitspringer/ausoms/blob/main/thesis/Figures/04_exemp_seg.png" alt="Segmented mouse skull in MRI sequence" width="50%"/>
 
 ## Prerequesities
