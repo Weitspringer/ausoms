@@ -12,11 +12,9 @@ assert(isequal(size(skullSeg), size(sGt)));
 eval = struct();
 if isa(skullSeg, 'logical') && isa(sGt, 'logical')
     skull = struct();
-    skull.whole.fScore = getFScore(skullSeg, sGt, beta);
     skull.whole.mcc = getMCC(skullSeg, sGt);
     skull.whole.dice = getDice(skullSeg, sGt);
     halfSize = round(size(skullSeg, 1) / 2);
-    skull.upperHalf.fScore = getFScore(skullSeg(1:halfSize,:,:), sGt(1:halfSize,:,:), beta);
     skull.upperHalf.mcc = getMCC(skullSeg(1:halfSize,:,:), sGt(1:halfSize,:,:));
     skull.upperHalf.dice = getDice(skullSeg(1:halfSize,:,:), sGt(1:halfSize,:,:));
     eval.skull = skull;
@@ -24,7 +22,6 @@ if isa(skullSeg, 'logical') && isa(sGt, 'logical')
         if isa(brainSeg, 'logical') && isa(bGt, 'logical')
             assert(isequal(size(brainSeg), size(bGt)));
             brain = struct();
-            brain.fScore = getFScore(brainSeg, bGt, beta);
             brain.mcc = getMCC(brainSeg, bGt);
             brain.dice = getDice(brainSeg, bGt);
             eval.brain = brain;
