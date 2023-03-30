@@ -1,5 +1,6 @@
-# AuSoMS
-Automatic Segmentation of the Mouse Skull in MR Images. Code developed in _MATLAB R2020b_ during the bachelorthesis _"Automatic Segmentation of the Mouse Skull in MR Images for MRI Guided Focused Ultrasound Therapy"_.
+# AuSoMS - Automatic Segmentation of the Mouse Skull (AuSoMS) in MR images  
+<img src="https://github.com/Weitspringer/ausoms/blob/main/thesis/Figures/04_exemp_seg.png" alt="Segmented mouse skull in MRI sequence" width="50%"/>
+
 ## Prerequesities
 You will need a folder `<dicomFolder>` containing a DICOM sequence. AuSoMS was developed for slices in the transversal plane.
 ## Installation
@@ -54,4 +55,4 @@ In case you want to evaluate the results, make sure you have a _.mat_ file `<eva
 options = struct(); options.evalFile = <path-to-evalFile>;
 [skull, brain, eval] = segmentationVolume(<path-to-dicomFolder>, options);
 ```
-The variable `eval` contains the Dice Score, the F-Score (default beta is 2) and the Matthews Correlation Coefficient for the skull segmentation (whole as well as upper half) and the brain segmentation if a ground truth was given. The scores will also be saved in `<outFile>` if you defined `options.outFile` before executing the main function.
+The variable `eval` contains the Dice Score and the Matthews Correlation Coefficient for the skull segmentation (whole as well as upper half) and the brain segmentation if a ground truth was given. The scores will also be saved in `<outFile>` if you defined `options.outFile` before executing the main function.
